@@ -14,31 +14,57 @@
 \section*{Introduction}
 % ============================================================
 
-% TODO
+The motion of a planet around a central body is one of the
+classical problems of mechanics.
+This paper derives the orbit from Newton's laws, computes the same orbit
+numerically, and checks that the two descriptions agree.
+The numerical data are written by a short Python script, and every figure
+is drawn from a formula or from those data by its own script.
 
 % ============================================================
 \section*{1. The Gravitational Model}
 % ============================================================
 
-% TODO
+A body of negligible mass moves under the gravity of a central mass $M$.
+Newton's law of gravitation and his second law give
+\begin{equation}
+  \ddot{\mathbf r} = -\frac{\mu}{r^3}\,\mathbf r, \qquad \mu = GM,
+\end{equation}
+where $\mathbf r$ is the position relative to the central body and $r = |\mathbf r|$.
+Throughout the paper we use units in which $\mu = 1$.
 
 % ============================================================
 \section*{2. The Analytical Orbit}
 % ============================================================
 
-% TODO
+The solutions of (1) are conic sections with the central body at a focus.
+For a bound orbit with semi-major axis $a$ and eccentricity $e < 1$,
+\begin{equation}
+  r(\theta) = \frac{a(1-e^2)}{1 + e\cos\theta},
+\end{equation}
+where $\theta$ is measured from the periapsis.
 
 % ============================================================
 \section*{3. From the Equation to a Plot}
 % ============================================================
 
-% TODO
+With $x = r\cos\theta$ and $y = r\sin\theta$, equation (2) becomes a curve
+in the plane.
+Figure~\ref{fig:analytical} shows it for $a = 1$ and $e = 0.6$:
+the periapsis is at $r = a(1-e) = 0.4$ and the apoapsis at $r = a(1+e) = 1.6$.
+
+% FIGURE 1
 
 % ============================================================
 \section*{4. Exploring Eccentricity}
 % ============================================================
 
-% TODO
+The eccentricity sets the shape of the orbit.
+For $e = 0$ the orbit is a circle of radius $a$; as $e$ grows toward 1
+the orbit becomes more elongated and the periapsis approaches the focus.
+Figure~\ref{fig:eccentricity} compares $e = 0$, $0.3$, $0.6$ and $0.8$ for $a = 1$.
+
+% FIGURE 2
 
 % ============================================================
 \section*{5. The Same Problem as a Dynamical System}
