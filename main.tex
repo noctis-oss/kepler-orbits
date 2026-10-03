@@ -105,13 +105,32 @@ The script uses only the Python standard library.
 \section*{7. Plotting the CSV Data}
 % ============================================================
 
-% TODO
+The numerical orbit is a list of points, not a formula.
+Figure~\ref{fig:numerical} draws the 721 points of \texttt{kepler\_orbit.csv}
+as one curve.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.6\textwidth]{figures/figure3.pdf}
+  \caption{The numerical orbit, drawn from \texttt{kepler\_orbit.csv}.}
+  \label{fig:numerical}
+\end{figure}
 
 % ============================================================
 \section*{8. Analytical vs.\ Numerical Orbit}
 % ============================================================
 
-% TODO
+If the integrator and the initial state are right, the two descriptions
+of the orbit coincide.
+Figure~\ref{fig:comparison} draws both: over the whole revolution the
+largest difference in radius is about $10^{-7}$, far below the width of a line.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.75\textwidth]{figures/figure4.pdf}
+  \caption{Analytical curve and numerical trajectory with matching $a = 1$, $e = 0.6$, $\mu = 1$ and initial conditions. The dashed curve is drawn from \texttt{kepler\_orbit.csv}.}
+  \label{fig:comparison}
+\end{figure}
 
 % ============================================================
 \section*{9. Kepler's Second Law}
