@@ -55,7 +55,15 @@ a first-order system that a numerical method can advance step by step.
 \section*{6. Generating the Orbit with Python}
 % ============================================================
 
-% TODO
+The script \texttt{generate\_kepler\_data.py} integrates (3) with the
+classical fourth-order Runge--Kutta method.
+It starts at the periapsis of the orbit in Figure~\ref{fig:analytical},
+\begin{equation}
+  x_0 = a(1-e) = 0.4, \qquad v_{y0} = \sqrt{\frac{\mu(1+e)}{a(1-e)}} = 2,
+\end{equation}
+and takes 720 steps over one period, $T = 2\pi\sqrt{a^3/\mu} = 2\pi$.
+It writes the trajectory to \texttt{kepler\_orbit.csv}.
+The script uses only the Python standard library.
 
 % ============================================================
 \section*{7. Plotting the CSV Data}
