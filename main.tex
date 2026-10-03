@@ -186,6 +186,18 @@ Linearized about a reference orbit, a small change in the state obeys
 where $A(t)$ is the Jacobian of (3) evaluated along the reference orbit.
 The state-transition matrix of (8) tells how an error in the initial state
 grows along the orbit.
+This paper does not sum the series.
+It integrates (8) numerically with RK4, together with the reference orbit and
+an orbit started $0.001$ faster.
+Figure~\ref{fig:variation} shows that the first-order prediction follows the
+perturbed orbit.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.6\textwidth]{figures/figure6.pdf}
+  \caption{Reference, perturbed and first-order orbits. The first-order prediction is a numerical RK4 integration of (8), not a Peano--Baker truncation.}
+  \label{fig:variation}
+\end{figure}
 
 % ============================================================
 \section*{13. From Equations to Computation}
