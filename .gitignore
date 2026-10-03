@@ -1,0 +1,15 @@
+# LaTeX build output
+build/
+*.aux
+*.log
+*.out
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+# Python
+.venv/
+__pycache__/
+# macOS
+.DS_Store
