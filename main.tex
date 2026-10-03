@@ -159,24 +159,43 @@ The period depends only on the semi-major axis.
 \section*{11. A Peano--Baker Perspective}
 % ============================================================
 
-% TODO
+A linear system $\dot{\mathbf x} = A(t)\,\mathbf x$ has the solution
+$\mathbf x(t) = \Phi(t,t_0)\,\mathbf x(t_0)$.
+The state-transition matrix $\Phi(t,t_0)$ is the sum of the Peano--Baker series,
+\begin{equation}
+  \Phi(t,t_0) = I + \int_{t_0}^{t} A(s_1)\,ds_1
+  + \int_{t_0}^{t} A(s_1)\int_{t_0}^{s_1} A(s_2)\,ds_2\,ds_1 + \cdots
+\end{equation}
 
 % ============================================================
 \section*{12. Peano--Baker and the Kepler Problem}
 % ============================================================
 
-% TODO
+Linearized about a reference orbit, a small change in the state obeys
+\begin{equation}
+  \delta\dot{\mathbf X} = A(t)\,\delta\mathbf X,
+\end{equation}
+where $A(t)$ is the Jacobian of (3) evaluated along the reference orbit.
+The state-transition matrix of (8) tells how an error in the initial state
+grows along the orbit.
 
 % ============================================================
 \section*{13. From Equations to Computation}
 % ============================================================
 
-% TODO
+The same orbit appeared three times: as an equation, as a function that
+advances a state, and as data in a file.
+Each view checks the others; the comparison in Figure~\ref{fig:comparison}
+is where an error in any of them would show.
 
 % ============================================================
 \section*{Summary}
 % ============================================================
 
-% TODO
+We derived the Keplerian orbit, integrated the equations of motion
+numerically, and drew both from a formula and from data.
+The two agree to $10^{-7}$ over a full period.
+The data, the figures and this paper are reproduced by the commands
+in \texttt{README.md}.
 
 \end{document}
