@@ -70,13 +70,26 @@ Figure~\ref{fig:eccentricity} compares $e = 0$, $0.3$, $0.6$ and $0.8$ for $a = 
 \section*{5. The Same Problem as a Dynamical System}
 % ============================================================
 
-% TODO
+Equation (1) is a second-order system.
+With the state vector $\mathbf X = (x, y, v_x, v_y)$ it becomes
+\begin{equation}
+  \dot{\mathbf X} = \left(v_x,\; v_y,\; -\frac{\mu x}{r^3},\; -\frac{\mu y}{r^3}\right),
+\end{equation}
+a first-order system that a numerical method can advance step by step.
 
 % ============================================================
 \section*{6. Generating the Orbit with Python}
 % ============================================================
 
-% TODO
+The script \texttt{generate\_kepler\_data.py} integrates (3) with the
+classical fourth-order Runge--Kutta method.
+It starts at the periapsis of the orbit in Figure~\ref{fig:analytical},
+\begin{equation}
+  x_0 = a(1-e) = 0.4, \qquad v_{y0} = \sqrt{\frac{\mu(1+e)}{a(1-e)}} = 2,
+\end{equation}
+and takes 720 steps over one period, $T = 2\pi\sqrt{a^3/\mu} = 2\pi$.
+It writes the trajectory to \texttt{kepler\_orbit.csv}.
+The script uses only the Python standard library.
 
 % ============================================================
 \section*{7. Plotting the CSV Data}
