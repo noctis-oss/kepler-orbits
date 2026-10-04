@@ -1,0 +1,5 @@
+Figure 6 integrates the first-order variational equation along the
+reference orbit with RK4. It is not a truncated Peano-Baker series.
+
+Figure 5 plots values that kepler_third_law.csv evaluates from the
+analytical law; it does not measure integrated periods.
