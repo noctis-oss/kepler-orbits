@@ -15,7 +15,7 @@
 % ============================================================
 
 The motion of a planet around a central body is one of the
-classical problems of celestial mechanics.
+classical problems of celestial mechanics~\cite{curtis2020,murray1999}.
 This paper derives the orbit from Newton's laws, computes the same orbit
 numerically, and checks that the two descriptions agree.
 The numerical data are written by a short Python script, and every figure
@@ -155,6 +155,15 @@ $b = a\sqrt{1-e^2}$ and $h = \sqrt{\mu a(1-e^2)}$,
 \end{equation}
 The period depends only on the semi-major axis.
 
+Figure~\ref{fig:third-law} plots $T^2$ against $a^3$ for six orbits.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.6\textwidth]{figures/figure5.pdf}
+  \caption{The values in \texttt{kepler\_third\_law.csv} against $T^2 = 4\pi^2a^3/\mu$.}
+  \label{fig:third-law}
+\end{figure}
+
 % ============================================================
 \section*{11. A Peano--Baker Perspective}
 % ============================================================
@@ -179,6 +188,19 @@ where $A(t)$ is the Jacobian of (3) evaluated along the reference orbit.
 The state-transition matrix of (8) tells how an error in the initial state
 grows along the orbit.
 
+This paper does not sum the series.
+It integrates (8) numerically with RK4, together with the reference orbit and
+an orbit started $0.001$ faster.
+Figure~\ref{fig:variation} shows that the first-order prediction follows the
+perturbed orbit.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.6\textwidth]{figures/figure6.pdf}
+  \caption{Reference, perturbed and first-order orbits. The first-order prediction is a numerical RK4 integration of (8), not a Peano--Baker truncation.}
+  \label{fig:variation}
+\end{figure}
+
 % ============================================================
 \section*{13. From Equations to Computation}
 % ============================================================
@@ -198,4 +220,6 @@ The two agree to $10^{-7}$ over a full period.
 The data, the figures and this paper are reproduced by the commands
 in \texttt{README.md}.
 
+\bibliographystyle{plain}
+\bibliography{refs}
 \end{document}
